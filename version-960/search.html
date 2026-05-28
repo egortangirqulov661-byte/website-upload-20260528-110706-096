@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索筛选 - 热播电影大全</title>
+  <meta name="description" content="搜索热播电影大全片库，按类型、地区、年份、题材筛选热门影片。">
+  <meta name="keywords" content="热播电影大全,热门影片,电影片库,热播电影,精选内容,持续更新">
+  <meta name="robots" content="index,follow">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./index.html" aria-label="热播电影大全首页">
+      <span class="brand-icon" aria-hidden="true">▶</span>
+      <span class="brand-copy">
+        <strong>热播电影大全</strong>
+        <small>热门影片片库</small>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="主导航">
+      <a class="nav-link" href="./index.html">首页</a>
+      <a class="nav-link" href="./categories.html">分类</a>
+      <a class="nav-link" href="./rankings.html">排行榜</a>
+      <a class="nav-link" href="./catalog/index.html">全站片库</a>
+      <a class="nav-link active" href="./search.html">搜索</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" aria-label="移动端导航">
+    <a class="mobile-link" href="./index.html">首页</a>
+    <a class="mobile-link" href="./categories.html">分类</a>
+    <a class="mobile-link" href="./rankings.html">排行榜</a>
+    <a class="mobile-link" href="./catalog/index.html">全站片库</a>
+    <a class="mobile-link active" href="./search.html">搜索</a>
+  </nav>
+</header>
+<main>
+
+<section class="page-hero simple-hero">
+  <div class="container">
+    <span class="hero-badge">搜索筛选</span>
+    <h1>搜索影片与筛选片库</h1>
+    <p>输入标题、地区、演员式关键词、标签或年份，结合类型、地区、题材筛选找到目标内容。</p>
+  </div>
+</section>
+<section class="content-section section-white">
+  <div class="container search-app" id="search-app">
+    <div class="search-panel">
+      <input id="search-query" type="search" placeholder="输入影片标题、标签、地区或年份" autocomplete="off">
+      <select id="search-type"><option value="">全部类型</option><option value="电影">电影</option><option value="剧集">剧集</option><option value="动漫动画">动漫动画</option><option value="综艺">综艺</option><option value="纪录片">纪录片</option></select>
+      <select id="search-region"><option value="">全部地区</option><option value="华语片库">华语片库</option><option value="欧美片库">欧美片库</option><option value="日韩片库">日韩片库</option><option value="亚洲其他">亚洲其他</option><option value="其他地区">其他地区</option></select>
+      <select id="search-genre"><option value="">全部题材</option><option value="剧情">剧情</option><option value="喜剧">喜剧</option><option value="悬疑">悬疑</option><option value="爱情">爱情</option><option value="动作">动作</option><option value="奇幻">奇幻</option><option value="家庭">家庭</option><option value="犯罪">犯罪</option><option value="惊悚">惊悚</option><option value="科幻">科幻</option><option value="恐怖">恐怖</option><option value="历史">历史</option><option value="冒险">冒险</option><option value="古装">古装</option><option value="战争">战争</option><option value="青春">青春</option><option value="音乐">音乐</option><option value="动画">动画</option><option value="传记">传记</option><option value="运动">运动</option><option value="心理">心理</option><option value="灾难">灾难</option><option value="文艺">文艺</option><option value="武侠">武侠</option><option value="真人秀">真人秀</option><option value="同性">同性</option><option value="校园">校园</option><option value="情色">情色</option></select>
+      <select id="search-year"><option value="">全部年份</option><option value="2024">2024</option><option value="2025">2025</option><option value="2023">2023</option><option value="2026">2026</option><option value="2022">2022</option><option value="2021">2021</option><option value="2019">2019</option><option value="2020">2020</option><option value="2027">2027</option><option value="2018">2018</option><option value="2017">2017</option><option value="2014">2014</option><option value="2016">2016</option><option value="2015">2015</option><option value="2012">2012</option><option value="1995">1995</option><option value="2010">2010</option><option value="1999">1999</option><option value="2013">2013</option><option value="1998">1998</option></select>
+      <button id="search-reset" type="button">重置</button>
+    </div>
+    <div class="search-summary" id="search-summary">正在加载片库数据…</div>
+    <div class="card-grid grid-4" id="search-results"></div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-footer" href="./index.html">
+        <span class="brand-icon" aria-hidden="true">▶</span>
+        <span class="brand-copy">
+          <strong>热播电影大全</strong>
+          <small>热门影片片库</small>
+        </span>
+      </a>
+      <p>围绕热播电影大全整理近期热门影片，展示片库分类和更新内容。</p>
+      <p class="footer-stats">已收录 2000 部影片 · 5 个内容类型 · 151 个地区来源</p>
+    </div>
+    <div>
+      <h3>快捷入口</h3>
+      <a href="./categories.html">分类总览</a>
+      <a href="./rankings.html">热门排行榜</a>
+      <a href="./catalog/index.html">全站片库</a>
+      <a href="./search.html">搜索筛选</a>
+    </div>
+    <div>
+      <h3>内容服务</h3>
+      <a href="./guide.html">观看指引</a>
+      <a href="./about.html">平台介绍</a>
+      <a href="./sitemap.xml">站点地图</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 热播电影大全. 内容持续更新。</span>
+  </div>
+</footer>
+  <script src="./assets/js/site.js" defer></script>
+  <script src="./assets/js/search-data.js" defer></script>
+  <script src="./assets/js/search.js" defer></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?76b5e2e0f6c84c06f0a7cb7105df054d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
